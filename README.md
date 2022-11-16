@@ -1,8 +1,25 @@
-# bauman.itog
- ## Description
- Qualification work for Bauman University data science course.
+# Qualification work for Bauman University data science course
+ ## Case: Predicting the size of the weld in electron beam welding
 
- There are two folders. In */jupyter/* catalogue you'll find original dataset (files: ebw_data), notebook.ipynb file, that's where dataset preprocessing, analysis and models fitting took place. Results of this process also in the same folder. Scikit-learn models of LinearRegression, RandomForestRegressor and StandartScaler were saved to .pkl files. Also Tensorflow.Keras neural net were saved there in *nn_model* using standart *.save() method.
+Inputs:
+
+1. Welding current value (IW);
+2. Electron beam focusing current (IF);
+3. Welding speed (VW);
+4. Distance from the surface to the electron-optical system (FP).
+
+Outputs:
+
+Weld *Depth*
+Weld *Width*
+
+Task:
+
+Predict the **Depth** and **Width** of the weld depending on the technological process parameters (IW, IF, VW, FP).
+
+ ## Description
+
+There are two folders. In */jupyter/* catalogue you'll find original dataset (files: ebw_data), notebook.ipynb file, that's where dataset preprocessing, analysis and models fitting took place. Results of this process also in the same folder. Scikit-learn models of LinearRegression, RandomForestRegressor and StandartScaler were saved to .pkl files. Also Tensorflow.Keras neural net were saved there in *nn_model* using standart *.save() method.
 
 LinearRegression were choosen since it's light and easy and provides seamingly good results for the particular dataset. RandomForestRegressor is a second one, powerfull and surprisingly accurate tool even with default parameters. Scaler.pkl is a saved StandartScaler object trained on the original dataset, it's being used for scaling user input in an application, providing normal models functioning in production.
 
@@ -12,8 +29,24 @@ In */flask.itog/* there's a basic flask application tuned for Heroku deployment.
 
 That's all for now, a lot of room for improvement anyway.
 
+# Квалификационная работа по курсу Аналитик данных МГТУ им. Баумана
+## Задача: «Прогнозирование размеров сварного шва при электронно-лучевой сварке тонкостенных конструкций аэрокосмического назначения»
+
+В качестве исходных данных были взяты результаты экспериментальных исследований, проводимых в целях улучшения технологического процесса электронно-лучевой сварки изделия, сборка которого состоит из элементов, состоящих из разнородного материала. Установка электронно-лучевой сварки, на которой проводились исследования, предназначена для сварки электронным лучом в глубоком вакууме деталей сборочных единиц из нержавеющих сталей, титановых, алюминиевых и специальных сплавов. Существующая установка электронно-лучевой сварки обеспечивает повторяемость режимов в рамках возможностей реализованной системы управления. Работы по сварке выполнялись на образцах-имитаторах, соответствующих технологическому изделию. Для уменьшения вложения энергии при сварке:
+
+1.	Снижалась величина сварочного тока (IW);
+2.	Увеличивался ток фокусировки электронного пучка (IF);
+3.	Увеличивалась скорость сварки (VW);
+4.	Менялось расстояние от поверхности образцов до электронно-оптической системы (FP). 
+
+По совокупности параметров технологических режимов обеспечивались минимально возможные размеры сварных швов: глубина шва (Depth) и ширина шва (Width).
+В процессе выполнения работ была произведена электронно-лучевая сварка 18-ти единиц образцов. Результаты металлографического контроля по размерам сварного шва для каждого образца проводились в 4-х поперечных сечениях сварного шва. Ускоряющее напряжение было постоянным в диапазоне 19,8 – 20 кВ. Набор полученных данных собраны в составе режимов сварки, размеров сварочных швов в поперечных сечениях всех образцов.
+
+Требуется: провести прогнозирование глубины (Depth) и ширины (Width) сварного шва в зависимости от параметров технологического процесса (IW, IF, VW, FP).
+
+
 ## Описание
-Квалификационная работа по курсу Аналитик данных МГТУ им. Баумана
+
 
 Есть две папки. В каталоге */jupyter/* вы найдете исходный набор данных (файлы: ebw_data), файл Notebook.ipynb, в котором происходила предварительная обработка набора данных, анализ и обучение моделей. Результаты этого процесса в этой же папке. Модели Scikit-learn LinearRegression, RandomForestRegressor и Scaler были сохранены в файлах .pkl. Там же была сохранена нейросеть Tensorflow.Keras в *nn_model* стандартным методом *.save().
 
